@@ -1,0 +1,11 @@
+Inside build trigger :   select pull scm = * * * * * 
+
+in build section : choose execute shell
+sudo cp -v -r -f * /job1
+
+if sudo docker ps | grep testos
+then
+echo " already running"
+else
+sudo docker run -dit -p 8082:80 -v /job1:/usr/local/apache2/htdocs/ --name testos httpd
+fi
