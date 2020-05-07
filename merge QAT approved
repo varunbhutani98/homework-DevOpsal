@@ -1,0 +1,10 @@
+inside scm 
+inside git paste github repo url in repository url
+set credential
+set additional  behaviour
+inside post build actions
+select git publisher
+select push only if build success  and merge result 
+select branches
+type master in branch to push
+select origin in target remote name
