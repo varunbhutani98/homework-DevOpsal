@@ -1,0 +1,16 @@
+Build : execute shell 
+
+sudo cp -v -r -f * /job2
+
+if sudo docker ps | grep productionos
+then
+echo " already running"
+
+sudo docker rm -f productionos
+sudo docker run -dit -p 8084:80 -v /job2:/usr/local/apache2/htdocs/ --name productionos httpd
+
+else
+sudo docker run -dit -p 8084:80 -v /job2:/usr/local/apache2/htdocs/ --name productionos httpd
+fi
+
+
